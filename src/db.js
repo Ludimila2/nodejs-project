@@ -17,10 +17,17 @@ function getProduto(id) {
     return produtos[id] || {} 
 }
 
+// excluindo produtos
+function excluirProduto(id) {
+    const produto = produtos[id]
+    delete produtos[id]
+    return produto
+}
+
 // retornando todos os produtos
 function getProdutos() {
     return Object.values(produtos)
 }
 
 // retornando as funções para fora do arquivo de modules
-module.exports = { salvarProduto, getProduto, getProdutos }
+module.exports = { salvarProduto, getProduto, getProdutos, excluirProduto }
